@@ -81,6 +81,10 @@ export default function RootLayout({
 }>) {
   return (
     <html className="dark" lang="en">
+      <head>
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+      </head>
+
       <body
         className={`${notoColorEmoji.variable} ${geistMono.variable} antialiased`}
       >
