@@ -46,7 +46,7 @@ export function useWordsLists() {
         return userLists;
       }
 
-      return [];
+      return listsLocal;
     },
   });
 
