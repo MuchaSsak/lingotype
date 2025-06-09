@@ -1,3 +1,12 @@
+## [1.0.4](https://github.com/MuchaSsak/lingotype/compare/v1.0.3...v1.0.4) (2025-06-09)
+
+
+### Bug Fixes
+
+* always return words lists from local storage ([555ebd7](https://github.com/MuchaSsak/lingotype/commit/555ebd79073a9d7396a0bda8b575625535a3779f))
+
+
+
 ## [1.0.3](https://github.com/MuchaSsak/lingotype/compare/v1.0.2...v1.0.3) (2025-06-09)
 
 
