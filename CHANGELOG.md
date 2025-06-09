@@ -1,4 +1,13 @@
-# 1.0.0 (2025-06-09)
+## [1.0.1](https://github.com/MuchaSsak/lingotype/compare/v1.0.0...v1.0.1) (2025-06-09)
+
+
+### Bug Fixes
+
+* translate hard-coded texts ([35f81f0](https://github.com/MuchaSsak/lingotype/commit/35f81f0f20ef704b42afc13da3acc1768d254bbd))
+
+
+
+# [1.0.0](https://github.com/MuchaSsak/lingotype/compare/4d8ac2e23b6f0d137be16b5cd392440f21038800...v1.0.0) (2025-06-09)
 
 
 ### Features
