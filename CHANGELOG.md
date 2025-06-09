@@ -1,3 +1,12 @@
+## [1.0.3](https://github.com/MuchaSsak/lingotype/compare/v1.0.2...v1.0.3) (2025-06-09)
+
+
+### Bug Fixes
+
+* set production url ([ee2321f](https://github.com/MuchaSsak/lingotype/commit/ee2321f1b99b18c36284d5d063750324fb407182))
+
+
+
 ## [1.0.2](https://github.com/MuchaSsak/lingotype/compare/v1.0.1...v1.0.2) (2025-06-09)
 
 
