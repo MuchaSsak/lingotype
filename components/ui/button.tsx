@@ -58,7 +58,7 @@ function Button({
       {...props}
     >
       <LoaderCircle
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform-gpu animate-spin transition-[opacity] duration-200"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-spin transition-[opacity] duration-200"
         style={{ opacity: isLoading ? 1 : 0 }}
       />
 

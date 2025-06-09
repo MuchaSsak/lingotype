@@ -31,7 +31,7 @@ function Footer() {
         <li>
           <AlertDialog>
             <AlertDialogTrigger className="hover:text-foreground focus-visible:text-foreground flex cursor-pointer items-center gap-1 transition-colors duration-300">
-              <Database className="size-4" /> storage
+              <Database className="size-4" /> {DICTIONARY[language]["storage"]}
             </AlertDialogTrigger>
 
             <FooterStorageDialog />
@@ -41,7 +41,7 @@ function Footer() {
         <li>
           <Dialog>
             <DialogTrigger className="hover:text-foreground focus-visible:text-foreground flex cursor-pointer items-center gap-1 transition-colors duration-300">
-              <Info className="size-4" /> info
+              <Info className="size-4" /> {DICTIONARY[language]["info"]}
             </DialogTrigger>
 
             <FooterInfoDialog />

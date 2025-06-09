@@ -28,19 +28,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useWordsLists } from "@/hooks/useWordsList";
 import { DICTIONARY } from "@/lib/dictionary";
-import { Loader2Icon } from "lucide-react";
 import { WordsList } from "./WordsListsMenu";
-
-const formSchema = z.object({
-  name: z
-    .string()
-    .min(2, "Name must have at least 1 character.")
-    .max(50, "Name cannot exceed 50 characters."),
-  list: z
-    .string()
-    .min(2, "Words list must have at least 4 characters.")
-    .max(1000, "Words list cannot exceed 1000 characters."),
-});
 
 function WordsListEditDialog({
   wordList,
@@ -53,6 +41,23 @@ function WordsListEditDialog({
 }) {
   const { language } = useLanguage();
   const { mutate } = useWordsLists();
+
+  const formSchema = z.object({
+    name: z
+      .string()
+      .min(2, DICTIONARY[language]["Name must have at least 1 character."])
+      .max(50, DICTIONARY[language]["Name cannot exceed 50 characters."]),
+    list: z
+      .string()
+      .min(
+        2,
+        DICTIONARY[language]["Words list must have at least 4 characters."],
+      )
+      .max(
+        1000,
+        DICTIONARY[language]["Words list cannot exceed 1000 characters."],
+      ),
+  });
 
   const [isPending, startTransition] = useTransition();
 
@@ -88,18 +93,9 @@ function WordsListEditDialog({
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
-          <DialogTitle>Edytuj liste</DialogTitle>
+          <DialogTitle>{DICTIONARY[language]["Edit list"]}</DialogTitle>
           <DialogDescription className="flex flex-col gap-2">
-            <span>Remember to use the proper format! Example:</span>
-            <code className="bg-secondary">
-              [Hervir] Hiervo Hierves Hierve Hervimos Hervís Hierven, To boil;
-              Pelar, To peel; Los platos, Plates; El vaso, Glass;
-            </code>
-            <span>
-              Each word/s and its translation must be seperated with a{" "}
-              <b>comma (,)</b> and then the very next word/s by a{" "}
-              <b>semicolon (;)</b>. White space is optional.
-            </span>
+            {DICTIONARY[language].wordsListFormat}
           </DialogDescription>
         </DialogHeader>
         <Form {...form}>
@@ -113,9 +109,12 @@ function WordsListEditDialog({
               name="name"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Name</FormLabel>
+                  <FormLabel>{DICTIONARY[language]["Name"]}</FormLabel>
                   <FormControl>
-                    <Input placeholder="1. Greetings - Saludos" {...field} />
+                    <Input
+                      placeholder={`1. ${DICTIONARY[language === "es" ? "en" : language]["Greetings"]} - Saludos`}
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -127,11 +126,11 @@ function WordsListEditDialog({
               name="list"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Words list</FormLabel>
+                  <FormLabel>{DICTIONARY[language]["Words list"]}</FormLabel>
                   <FormControl>
                     <Textarea
                       className="h-48 resize-none"
-                      placeholder="Hola, Hello; Hasta luego, See you later; Buenos diás, Good morning;"
+                      placeholder={`Hola, ${DICTIONARY[language === "es" ? "en" : language]["Hello"]}; Hasta luego, ${DICTIONARY[language === "es" ? "en" : language]["See you later"]}; Buenos diás, ${DICTIONARY[language === "es" ? "en" : language]["Good morning"]};`}
                       {...field}
                     />
                   </FormControl>
@@ -145,12 +144,8 @@ function WordsListEditDialog({
                   {DICTIONARY[language]["Cancel"]}
                 </Button>
               </DialogClose>
-              <Button type="submit" disabled={isPending}>
-                {isPending ? (
-                  <Loader2Icon className="animate-spin" />
-                ) : (
-                  "Save changes"
-                )}
+              <Button type="submit" isLoading={isPending}>
+                <span>{DICTIONARY[language]["Save changes"]}</span>
               </Button>
             </DialogFooter>
           </form>

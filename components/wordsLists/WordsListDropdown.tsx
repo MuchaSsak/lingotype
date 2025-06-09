@@ -23,12 +23,15 @@ import { useState } from "react";
 import { WordsList } from "./WordsListsMenu";
 import { useWordsLists } from "@/hooks/useWordsList";
 import WordsListEditDialog from "./WordsListEditDialog";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { DICTIONARY } from "@/lib/dictionary";
 
 function WordsListDropdown({ wordList }: { wordList: WordsList }) {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [deleteDialogOpen, setDeleteDialogOpen] = useState(false);
   const [editDialogOpen, setEditDialogOpen] = useState(false);
   const { mutate } = useWordsLists();
+  const { language } = useLanguage();
 
   async function handleDeleteWordsList() {
     await mutate.mutateAsync(
@@ -59,7 +62,7 @@ function WordsListDropdown({ wordList }: { wordList: WordsList }) {
             setEditDialogOpen(true);
           }}
         >
-          Edit <Edit3Icon />
+          {DICTIONARY[language]["Edit"]} <Edit3Icon />
         </DropdownMenuItem>
         <DropdownMenuItem
           onSelect={(e) => {
@@ -68,7 +71,7 @@ function WordsListDropdown({ wordList }: { wordList: WordsList }) {
           }}
         >
           <div className="flex items-center gap-2">
-            Delete <Trash2Icon />
+            {DICTIONARY[language]["Delete"]} <Trash2Icon />
           </div>
         </DropdownMenuItem>
       </DropdownMenuContent>
@@ -83,16 +86,22 @@ function WordsListDropdown({ wordList }: { wordList: WordsList }) {
         <AlertDialogContent>
           <AlertDialogHeader>
             <AlertDialogTitle>
-              Are you sure you want to delete this words list?
+              {
+                DICTIONARY[language][
+                  "Are you sure you want to delete this words list?"
+                ]
+              }
             </AlertDialogTitle>
             <AlertDialogDescription>
-              This action cannot be undone.
+              {DICTIONARY[language]["This action cannot be undone."]}
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
-            <AlertDialogCancel>Cancel</AlertDialogCancel>
+            <AlertDialogCancel>
+              {DICTIONARY[language]["Cancel"]}
+            </AlertDialogCancel>
             <AlertDialogAction onClick={handleDeleteWordsList}>
-              Delete
+              {DICTIONARY[language]["Delete"]}
             </AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>

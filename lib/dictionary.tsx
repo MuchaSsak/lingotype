@@ -57,6 +57,42 @@ export const DICTIONARY = {
     Cancel: "Cancel",
     "Clear all": "Clear all",
     "Create a new words list": "Create a new words list",
+    Greetings: "Greetings",
+    Name: "Name",
+    "Name must have at least 1 character.":
+      "Name must have at least 1 character.",
+    "Name cannot exceed 50 characters.": "Name cannot exceed 50 characters.",
+    "Words list must have at least 4 characters.":
+      "Words list must have at least 4 characters.",
+    "Words list cannot exceed 1000 characters.":
+      "Words list cannot exceed 1000 characters.",
+    Edit: "Edit",
+    Delete: "Delete",
+    Hello: "Hello",
+    "See you later": "See you later",
+    "Good morning": "Good morning",
+    "This action cannot be undone.": "This action cannot be undone.",
+    "Are you sure you want to delete this words list?":
+      "Are you sure you want to delete this words list?",
+    "Edit list": "Edit list",
+    "Words list": "Words list",
+    "Save changes": "Save changes",
+    info: "info",
+    storage: "storage",
+    wordsListFormat: (
+      <>
+        <span>Remember to use the proper format! Example:</span>
+        <code className="bg-secondary">
+          [Hervir] Hiervo Hierves Hierve Hervimos Hervís Hierven, To boil;
+          Pelar, To peel; Los platos, Plates; El vaso, Glass;
+        </code>
+        <span>
+          Each word/s and its translation must be seperated with a{" "}
+          <b>comma (,)</b> and then the very next word/s by a{" "}
+          <b>semicolon (;)</b>. White space is optional.
+        </span>
+      </>
+    ),
     footerStorageDialog: (
       <>
         <span>
@@ -155,6 +191,42 @@ export const DICTIONARY = {
     Cancel: "Anuluj",
     "Clear all": "Wyczyść wszystko",
     "Create a new words list": "Stwórz nową listę słów",
+    Greetings: "Przywitania",
+    Name: "Nazwa",
+    "Name must have at least 1 character.":
+      "Nazwa musi mieć conajmniej 1 znak.",
+    "Name cannot exceed 50 characters.":
+      "Nazwa nie może mieć więcej niż 50 znaków.",
+    "Words list must have at least 4 characters.":
+      "Lista słów musi mieć conajmniej 4 znaki.",
+    "Words list cannot exceed 1000 characters.":
+      "Lista słów nie może mieć więcej niż 1000 znaków.",
+    "Edit list": "Edytuj listę",
+    "Words list": "Lista słów",
+    Hello: "Cześć",
+    "See you later": "Widzimy się później",
+    "Good morning": "Dzień dobry",
+    Edit: "Edytuj",
+    Delete: "Usuń",
+    "This action cannot be undone.": "Ta akcja nie może zostać odwrócona.",
+    "Are you sure you want to delete this words list?":
+      "Czy napewno chcesz usunąć tę listę słów?",
+    "Save changes": "Zapisz zmiany",
+    info: "informacje",
+    storage: "magazyn",
+    wordsListFormat: (
+      <>
+        <span>Pamiętaj użyć poprawnego formatu! Przykład:</span>
+        <code className="bg-secondary">
+          [Hervir] Hiervo Hierves Hierve Hervimos Hervís Hierven, Wrzeć; Pelar,
+          Obierać; Los platos, Talerze; El vaso, Szklanka;
+        </code>
+        <span>
+          Każde słowo/a musi być oddzielane <b>przecinkiem (,)</b> i potem
+          następne słowo/a <b>średnikiem (;)</b>. Spacje są opcjonalne.
+        </span>
+      </>
+    ),
     footerStorageDialog: (
       <>
         <span>
@@ -255,13 +327,50 @@ export const DICTIONARY = {
       "¿Quieres borrar los datos de la aplicación del navegador?",
     Cancel: "Cancelar",
     "Clear all": "Borrar todo",
-    "Create a new words list": "",
+    "Create a new words list": "Crear una nueva lista de palabras",
+    Greetings: "Saludos",
+    Name: "Nombre",
+    Hello: "Hola",
+    "See you later": "Hasta luego",
+    "Good morning": "Buenos días",
+    "Name must have at least 1 character.":
+      "El nombre debe tener al menos 1 carácter.",
+    "Name cannot exceed 50 characters.":
+      "El nombre no puede superar los 50 caracteres.",
+    "Words list must have at least 4 characters.":
+      "La lista de palabras debe tener al menos 4 caracteres.",
+    "Words list cannot exceed 1000 characters.":
+      "La lista de palabras no puede superar los 1000 caracteres.",
+    Edit: "Editar",
+    Delete: "Eliminar",
+    "This action cannot be undone.": "Esta acción no se puede deshacer.",
+    "Are you sure you want to delete this words list?":
+      "¿Estás seguro de que deseas eliminar esta lista de palabras?",
+    "Edit list": "Editar lista",
+    "Words list": "Lista de palabras",
+    "Save changes": "Guardar cambios",
+    info: "información",
+    storage: "almacenamiento",
+    wordsListFormat: (
+      <>
+        <span>¡Recuerda usar el formato correcto! Ejemplo:</span>
+        <code className="bg-secondary">
+          [Hervir] Hiervo Hierves Hierve Hervimos Hervís Hierven, To boil;
+          Pelar, To peel; Los platos, Plates; El vaso, Glass;
+        </code>
+        <span>
+          Cada palabra y su traducción deben separarse con una <b>coma (,)</b> y
+          luego la siguiente palabra con un <b>punto y coma (;)</b>. Los
+          espacios en blanco son opcionales.
+        </span>
+      </>
+    ),
     footerStorageDialog: (
       <>
         <span>
           Esta acción no se puede deshacer. Esto eliminará permanentemente el
-          almacenamiento local de tu navegador y, por lo tanto, podría borrar
-          todos tus datos (por ejemplo, listas de palabras, estadísticas, etc.).
+          almacenamiento local del navegador y podría borrar todos tus datos
+          (por ejemplo, listas de palabras, estadísticas, etc.).
         </span>
         <span>
           Sin embargo, si has iniciado sesión, tus datos permanecerán en nuestra
