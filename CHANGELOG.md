@@ -1,3 +1,12 @@
+## [1.0.2](https://github.com/MuchaSsak/lingotype/compare/v1.0.1...v1.0.2) (2025-06-09)
+
+
+### Bug Fixes
+
+* replace temporary logo ([b08bf7c](https://github.com/MuchaSsak/lingotype/commit/b08bf7c92914d5fa4c2bf709ea22af4584b0d075))
+
+
+
 ## [1.0.1](https://github.com/MuchaSsak/lingotype/compare/v1.0.0...v1.0.1) (2025-06-09)
 
 
